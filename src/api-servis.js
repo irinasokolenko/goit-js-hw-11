@@ -9,7 +9,7 @@ export default class NewsApiService {
   async fetchGallery() {
     const axiosOptions = {
       method: 'get',
-      url: 'https://www.istockphoto.com/en/search/2/image?mediatype=photography&phrase=animal+cat&utm_source=pixabay&utm_medium=affiliate&utm_campaign=ADP_photo_sponsored&utm_content=https%3A%2F%2Fpixabay.com%2Fphotos%2Fanimal-cat-mammal-feline-pet-fur-8165466%2F&utm_term=animal+cat',
+      url: 'https://pixabay.com/api/',
       params: {
         key: '34523545-f21683fd59bfc3e4e2549fe07',
         q: `${this.searchQuery}`,
