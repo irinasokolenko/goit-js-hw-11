@@ -2,7 +2,8 @@ import './sass/index.scss';
 import NewsApiService from './js/api-service';
 import { lightbox } from './js/lightbox';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 
 const refs = {
   searchForm: document.querySelector('.search-form'),
