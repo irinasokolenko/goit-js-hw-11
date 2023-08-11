@@ -61,7 +61,7 @@ async function fetchGallery() {
     return;
   }
 
-  onRenderGallery(hits);
+  onRenderGallery(elements);
   isShown += hits.length;
 
   if (isShown < total) {
