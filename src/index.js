@@ -38,7 +38,7 @@ function onSearch(element) {
 
   isShown = 0;
   fetchGallery();
-  onRenderGallery(element);
+  onRenderGallery(hits);
 }
 
 function onLoadMore() {
