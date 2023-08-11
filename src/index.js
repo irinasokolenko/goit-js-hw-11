@@ -38,7 +38,7 @@ function onSearch(element) {
 
   isShown = 0;
   fetchGallery();
-  onRenderGallery();
+  onRenderGallery(hits);
 }
 
 function onLoadMore() {
@@ -61,7 +61,7 @@ async function fetchGallery() {
     return;
   }
 
-  onRenderGallery(elements);
+  onRenderGallery(hits);
   isShown += hits.length;
 
   if (isShown < total) {
@@ -76,8 +76,8 @@ async function fetchGallery() {
 
 function onRenderGallery(elements) {
   const markup = elements
-    .map(element =>{
-      const{
+    .map(
+      ({
         webformatURL,
         largeImageURL,
         tags,
@@ -85,8 +85,8 @@ function onRenderGallery(elements) {
         views,
         comments,
         downloads,
-      } = element;
-      return `<div class="photo-card">
+      }) => {
+        return `<div class="photo-card">
     <a href="${largeImageURL}">
       <img class="photo-img" src="${webformatURL}" alt="${tags}" loading="lazy" />
     </a>
