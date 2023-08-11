@@ -85,7 +85,8 @@ function onRenderGallery(elements) {
         views,
         comments,
         downloads,
-      }) => {
+      }) 
+      {
         return `<div class="photo-card">
     <a href="${largeImageURL}">
       <img class="photo-img" src="${webformatURL}" alt="${tags}" loading="lazy" />
