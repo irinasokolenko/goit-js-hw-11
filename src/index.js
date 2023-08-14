@@ -51,7 +51,7 @@ async function fetchGallery() {
 
   const result = await newsApiService.fetchGallery();
   const { Hits, total } = result;
-  isShown += its.length;
+  isShown += Hits.length;
 
   if (!its.length) {
     Notify.failure(
