@@ -38,7 +38,7 @@ function onSearch(element) {
 
   isShown = 0;
   fetchGallery();
-  onRenderGallery(hits);
+  onRenderGallery(gallery);
 }
 
 function onLoadMore() {
@@ -50,10 +50,10 @@ async function fetchGallery() {
   refs.loadMoreBtn.classList.add('is-hidden');
 
   const result = await newsApiService.fetchGallery();
-  const { hits, total } = result;
-  isShown += hits.length;
+  const { gallery, total } = result;
+  isShown += gallery.length;
 
-  if (!hits.length) {
+  if (!gallery.length) {
     Notify.failure(
       `Sorry, there are no images matching your search query. Please try again.`
     );
@@ -61,8 +61,8 @@ async function fetchGallery() {
     return;
   }
 
-  onRenderGallery(hits);
-  isShown += hits.length;
+  onRenderGallery(gallery);
+  isShown += gallery.length;
 
   if (isShown < total) {
     Notify.success(`Hooray! We found ${total} images !!!`);
