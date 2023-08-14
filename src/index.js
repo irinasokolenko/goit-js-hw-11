@@ -76,7 +76,7 @@ async function fetchGallery() {
 
 function onRenderGallery(elements) {
   const markup = elements
-    .map
+    .map(
       ({
         webformatURL,
         largeImageURL,
