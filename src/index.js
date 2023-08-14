@@ -77,16 +77,10 @@ async function fetchGallery() {
 function onRenderGallery(elements) {
   const markup = elements
     .map(
-      ({
-        webformatURL,
-        largeImageURL,
-        tags,
-        likes,
-        views,
-        comments,
-        downloads,
-      }) => {
-        return `<div class="photo-card">
+      function ({
+      webformatURL, largeImageURL, tags, likes, views, comments, downloads,
+    }) {
+      return `<div class="photo-card">
     <a href="${largeImageURL}">
       <img class="photo-img" src="${webformatURL}" alt="${tags}" loading="lazy" />
     </a>
@@ -109,7 +103,7 @@ function onRenderGallery(elements) {
       </p>
     </div>
     </div>`;
-      }
+    }
     )
     .join('');
   refs.galleryContainer.insertAdjacentHTML('beforeend', markup);
